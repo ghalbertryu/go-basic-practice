@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-basic-practice/utils"
 	"runtime"
 	"time"
 )
@@ -10,7 +11,7 @@ func main() {
 	// loop
 	forExample()
 	whileExample()
-	infiniteLoop()
+	//infiniteLoop()
 
 	// if
 	ifExample()
@@ -25,6 +26,8 @@ func main() {
 }
 
 func forExample() {
+	utils.PrintDividingLine("forExample")
+
 	sum := 0
 	for i := 0; i < 100; i++ {
 		sum += i
@@ -34,6 +37,8 @@ func forExample() {
 }
 
 func whileExample() {
+	utils.PrintDividingLine("whileExample")
+
 	sum := 1
 	for sum < 10 {
 		sum += sum
@@ -42,6 +47,8 @@ func whileExample() {
 }
 
 func infiniteLoop() {
+	utils.PrintDividingLine("infiniteLoop")
+
 	i := 0
 	for {
 		i++
@@ -50,6 +57,8 @@ func infiniteLoop() {
 }
 
 func ifExample() {
+	utils.PrintDividingLine("ifExample")
+
 	num := -3
 	if num == 0 {
 		fmt.Println("zero", "value=", num)
@@ -61,6 +70,8 @@ func ifExample() {
 }
 
 func multiTenLimit(num, limit int) int {
+	utils.PrintDividingLine("multiTenLimit")
+
 	if v := num * 10; v < limit {
 		return v
 	}
@@ -68,6 +79,8 @@ func multiTenLimit(num, limit int) int {
 }
 
 func switchExample() {
+	utils.PrintDividingLine("switchExample")
+
 	fmt.Print("Go runs on ")
 	switch os := runtime.GOOS; os {
 	case "darwin":
@@ -80,6 +93,8 @@ func switchExample() {
 }
 
 func switchWithNoCondition() {
+	utils.PrintDividingLine("switchWithNoCondition")
+
 	t := time.Now()
 	switch {
 	case t.Hour() < 12:
@@ -92,6 +107,8 @@ func switchWithNoCondition() {
 }
 
 func deferExample() {
+	utils.PrintDividingLine("deferExample")
+
 	i := 0
 	for ; i < 5; i++ {
 		defer fmt.Println(i)

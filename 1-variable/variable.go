@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
+	"go-basic-practice/utils"
 	"strconv"
 	"unsafe"
 )
 
 func main() {
-	intTest()
-	stringTest()
-	pringFTest()
+	intExample()
+	stringExample()
+	printfExample()
 }
 
-func intTest() {
-	fmt.Println("intTest\n=======")
+func intExample() {
+	utils.PrintDividingLine("intExample")
 
 	var a int8 = 3
 	var b int32 = 3
@@ -24,12 +25,10 @@ func intTest() {
 		unsafe.Sizeof(b),
 		unsafe.Sizeof(c),
 		unsafe.Sizeof(d))
-
-	fmt.Println("=======\n")
 }
 
-func stringTest() {
-	fmt.Println("stringTest\n=======")
+func stringExample() {
+	utils.PrintDividingLine("stringExample")
 
 	str := `
 		package main
@@ -41,12 +40,10 @@ func stringTest() {
 		)
 	`
 	fmt.Println(str)
-
-	fmt.Println("=======\n")
 }
 
-func pringFTest() {
-	fmt.Println("pringFTest\n=======")
+func printfExample() {
+	utils.PrintDividingLine("printfExample")
 
 	numStr := "12345"
 	fmt.Printf("digit:%d, char:%c, string:%s, type:%T, value:%v \n",
@@ -54,6 +51,4 @@ func pringFTest() {
 	num, _ := strconv.ParseInt(numStr, 10, 64)
 	fmt.Printf("digit:%d, char:%c, string:%s, type:%T, value:%v \n",
 		num, num, num, num, num)
-
-	fmt.Println("=======\n")
 }

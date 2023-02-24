@@ -82,7 +82,8 @@ func switchExample() {
 	utils.PrintDividingLine("switchExample")
 
 	fmt.Print("Go runs on ")
-	switch os := runtime.GOOS; os {
+	os := runtime.GOOS
+	switch os {
 	case "darwin":
 		fmt.Println("OS X.")
 	case "linux":

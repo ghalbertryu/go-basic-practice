@@ -15,6 +15,8 @@ func main() {
 		"googleDNS": {8, 8, 8, 8},
 	}
 	for name, ip := range hosts {
+		fmt.Println("ip", ip)
+		fmt.Println("&ip", &ip)
 		fmt.Printf("%v: %v\n", name, ip)
 	}
 }

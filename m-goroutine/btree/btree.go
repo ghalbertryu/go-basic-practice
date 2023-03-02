@@ -1,30 +1,8 @@
-package main
+package btree
 
 import (
-	"fmt"
 	"golang.org/x/tour/tree"
 )
-
-func main() {
-	walkTest()
-	sameTest()
-}
-
-func walkTest() {
-	t := tree.New(1)
-	fmt.Printf("t=%s\n", t)
-
-	ch := make(chan int)
-	go Walk(t, ch)
-	for v := range ch {
-		fmt.Print(v, " ")
-	}
-	println()
-}
-
-func sameTest() {
-	println(Same(tree.New(3), tree.New(3)))
-}
 
 func Walk(t *tree.Tree, ch chan int) {
 	walk(t, ch)
